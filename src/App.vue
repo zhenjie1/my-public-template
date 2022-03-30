@@ -13,11 +13,11 @@ function useTableData() {
   return {
     data,
     loading,
-    refresh: start,
+    refresh: () => start('user', 'pass'),
   }
 }
 
-const { data, loading, refresh } = useTableData()
+const { data, loading } = useTableData()
 // 语法提示
 // eslint-disable-next-line no-console
 console.log(data.value.params1)

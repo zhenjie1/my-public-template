@@ -20,7 +20,7 @@ type FailFn<T> = (data: AxiosError<T>) => void
 /**
  * - api 函数最终返回的结构
  */
-export type APIFetchReturn<T, P extends Data[], R> = UseAxiosReturn<R> & {
+export type APIFetchReturn<T, P extends Data[], R> = Omit<UseAxiosReturn<R>, 'data'> & {
   start: (...args: P) => APIFetchReturn<T, P, R>
   loading: UseAxiosReturn<T>['isLoading']
   finished: UseAxiosReturn<T>['isFinished']

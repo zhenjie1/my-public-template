@@ -6,9 +6,16 @@ export const useUserStore = defineStore('user', () => {
     token = name
   }
 
+  let info = $(ref<string>(''))
+  function saveInfo(data: string) {
+    info = data
+  }
+
   return {
     token,
     setToken,
+    info,
+    saveInfo,
   }
 })
 

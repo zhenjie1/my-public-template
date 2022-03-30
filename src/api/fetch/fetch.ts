@@ -26,7 +26,7 @@ export function useAxios<
   P extends any[] = Parameters<T>,
 >(apiFn: T): APIFetchReturn<T, P, R> {
   const response = shallowRef<AxiosResponse<R>>()
-  const data = ref<Data>({})
+  const data = ref<R>({} as R)
   const sourceData = ref({} as any)
   const isFinished = ref(false)
   const isLoading = ref(false)
@@ -34,8 +34,6 @@ export function useAxios<
   const error = shallowRef<AxiosError<R>>()
   const successPool: Success<R>[] = []
   const failPool: Fail<R>[] = []
-
-  // data.value
 
   // 取消请求
   const cancelToken: CancelTokenSource = axios.CancelToken.source()
@@ -47,6 +45,8 @@ export function useAxios<
     isLoading.value = false
     isFinished.value = false
   }
+  // 关闭页面时，取消页面发送的请求
+  tryOnUnmounted(() => abort('page unmounted for api abort'))
 
   let resolve: (arg: any) => void
   let reject: (err: any) => void
@@ -87,13 +87,13 @@ export function useAxios<
     const dataKey: 'params' | 'data' = config.method?.toLocaleLowerCase() === 'get' ? 'params' : 'data'
     config[dataKey] = removeSurplusData(config[dataKey], config.exclude)
 
-    data.value = config.defaultValue
+    data.value = config.defaultValue ?? data.value
 
-    // console.log('config', config)
     promise.then((result) => {
       response.value = result
       if (result.data.code === 0) {
         const resultData = get(result, config.dataPath as string)
+        data.value = resultData
         successPool.map(fn => fn(data.value as any))
         resolve?.(resultData)
       } else {

@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { useUserStore } from '@/stores/user'
-ref()
 
 const user = useUserStore()
-const name = $ref(user.savedName)
+const name = user.info
 
 const router = useRouter()
 const go = () => {
   if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+    router.push(`/hi/${encodeURIComponent(name as any)}`)
 }
 
 const { t } = useI18n()
+console.log(t)
 </script>
 
 <template>
-  <counter />
   <div>
     <div text-4xl>
       <div i-carbon-campsite inline-block />

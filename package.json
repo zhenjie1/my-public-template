@@ -23,7 +23,7 @@
     "pinia": "^2.0.12",
     "pinia-plugin-persistedstate": "^1.5.1",
     "prism-theme-vars": "^0.2.2",
-    "vue": "^3.2.31",
+    "vue": "3.2.31",
     "vue-demi": "^0.12.4",
     "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.14"
