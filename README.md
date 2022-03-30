@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
+  <img src='https://user-images.githubusercontent.com/11247099/154486817-f86b8f20-5463-4122-b6e9-930622e757f2.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
 </p>
 
 <p align='center'>
@@ -10,6 +10,13 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 <p align='center'>
 <a href="https://vitesse.netlify.app/">Live Demo</a>
+</p>
+
+<br>
+
+<p align='center'>
+<b>English</b> | <a href="https://github.com/antfu/vitesse/blob/main/README.zh-CN.md">简体中文</a>
+<!-- Contributors: Thanks for geting interested, however we DON'T accept new transitions to the README, thanks. -->
 </p>
 
 <br>
@@ -28,9 +35,9 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - 📲 [PWA](https://github.com/antfu/vite-plugin-pwa)
 
-- 🎨 [Windi CSS](https://github.com/windicss/windicss) - next generation utility-first CSS framework
+- 🎨 [UnoCSS](https://github.com/antfu/unocss) - the instant on-demand atomic CSS engine
 
-- 😃 [Use icons from any icon sets, with no compromise](https://github.com/antfu/unplugin-icons)
+- 😃 [Use icons from any icon sets with classes](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
 - 🌍 [I18n ready](./locales)
 
@@ -38,15 +45,17 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 
+- 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
+
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
-- 🖨 Server-side generation (SSG) via [vite-ssg](https://github.com/antfu/vite-ssg)
+- 🖨 Static-site generation (SSG) via [vite-ssg](https://github.com/antfu/vite-ssg)
 
 - 🦔 Critical CSS via [critters](https://github.com/GoogleChromeLabs/critters)
 
 - 🦾 TypeScript, of course
 
-- ⚙️ E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
+- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
 
 - ☁️ Deploy on Netlify, zero-config
 
@@ -56,13 +65,12 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 ### UI Frameworks
 
-- [Windi CSS](https://github.com/windicss/windicss) (On-demand [TailwindCSS](https://tailwindcss.com/)) - lighter and faster, with a bunch of additional features!
-  - [Windi CSS Typography](https://windicss.org/plugins/official/typography.html)
+- [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
 
 ### Icons
 
 - [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
-- [`unplugin-icons`](https://github.com/antfu/unplugin-icons) - icons as Vue components
+- [Pure CSS Icons via UnoCSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
 ### Plugins
 
@@ -73,13 +81,13 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 - [`vite-plugin-pwa`](https://github.com/antfu/vite-plugin-pwa) - PWA
-- [`vite-plugin-windicss`](https://github.com/antfu/vite-plugin-windicss) - Windi CSS Integration
 - [`vite-plugin-md`](https://github.com/antfu/vite-plugin-md) - Markdown as components / components in Markdown
   - [`markdown-it-prism`](https://github.com/jGleitz/markdown-it-prism) - [Prism](https://prismjs.com/) for syntax highlighting
   - [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) - customizable Prism.js theme using CSS variables
 - [Vue I18n](https://github.com/intlify/vue-i18n-next) - Internationalization
   - [`vite-plugin-vue-i18n`](https://github.com/intlify/vite-plugin-vue-i18n) - Vite plugin for Vue I18n
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
+- [`vite-ssg-sitemap`](https://github.com/jbaubree/vite-ssg-sitemap) - Sitemap generator
 - [`@vueuse/head`](https://github.com/vueuse/head) - manipulate document head reactively
 
 ### Coding Style
@@ -90,9 +98,10 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 ### Dev tools
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [Cypress](https://cypress.io/) - E2E Testing
+- [Vitest](https://github.com/vitest-dev/vitest) - Unit testing powered by Vite
+- [Cypress](https://cypress.io/) - E2E testing
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
-- [`vite-ssg`](https://github.com/antfu/vite-ssg) - Server-side generation
+- [`vite-ssg`](https://github.com/antfu/vite-ssg) - Static-site generation
   - [critters](https://github.com/GoogleChromeLabs/critters) - Critical CSS
 - [Netlify](https://www.netlify.com/) - zero-config deployment
 - [VS Code Extensions](./.vscode/extensions.json)
@@ -100,7 +109,6 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
   - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) - Vue 3 `<script setup>` IDE support
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - Icon inline display and autocomplete
   - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - All in one i18n support
-  - [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - IDE support for Windi CSS
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Variations
@@ -123,8 +131,12 @@ As this template is strongly opinionated, the following provides a curated list 
 - [vitesse-modernized-chrome-ext](https://github.com/xiaoluoboding/vitesse-modernized-chrome-ext) by [@xiaoluoboding](https://github.com/xiaoluoboding) - ⚡️ Modernized Chrome Extension Manifest V3 Vite Starter Template
 - [vitesse-stackter-clean-architect](https://github.com/shamscorner/vitesse-stackter-clean-architect) by [@shamscorner](https://github.com/shamscorner) - A modular clean architecture pattern in vitesse template
 - [vitesse-enterprise](https://github.com/FranciscoKloganB/vitesse-enterprise) by [@FranciscoKloganB](https://github.com/FranciscoKloganB) - Consistent coding styles regardless of team-size.
+- [vitecamp](https://github.com/nekobc1998923/vitecamp) by [@nekobc1998923](https://github.com/nekobc1998923) - Like Vitesse but without SSG/SSR/File based routing, includes Element Plus
+- [vitesse-lite-react](https://github.com/lxy-yz/vitesse-lite-react) by [@lxy-yz](https://github.com/lxy-yz) - vitesse-lite React fork
 
 ## Try it now!
+
+> Vitesse requires Node >=14
 
 ### GitHub Template
 
@@ -146,6 +158,7 @@ When you use this template, try follow the checklist to update your info properl
 
 - [ ] Change the author name in `LICENSE`
 - [ ] Change the title in `App.vue`
+- [ ] Change the hostname in `vite.config.ts`
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the READMEs and remove routes

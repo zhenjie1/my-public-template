@@ -1,33 +1,35 @@
 <script setup lang="ts">
-import { useUserStore } from '~/stores/user'
+import { useUserStore } from '@/stores/user'
+ref()
 
 const user = useUserStore()
-const name = ref(user.savedName)
+const name = $ref(user.savedName)
 
 const router = useRouter()
 const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+  if (name)
+    router.push(`/hi/${encodeURIComponent(name)}`)
 }
 
 const { t } = useI18n()
 </script>
 
 <template>
+  <counter />
   <div>
-    <p class="text-4xl">
-      <carbon-campsite class="inline-block" />
-    </p>
+    <div text-4xl>
+      <div i-carbon-campsite inline-block />
+    </div>
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
         Vitesse
       </a>
     </p>
     <p>
-      <em class="text-sm opacity-75">{{ t('intro.desc') }}</em>
+      <em text-sm opacity-75 w-100>{{ t('intro.desc') }}</em>
     </p>
 
-    <div class="py-4" />
+    <div py-4 />
 
     <input
       id="input"
@@ -36,8 +38,9 @@ const { t } = useI18n()
       :aria-label="t('intro.whats-your-name')"
       type="text"
       autocomplete="false"
-      p="x-4 y-2"
+      p="x4 y2"
       w="250px"
+      class=""
       text="center"
       bg="transparent"
       border="~ rounded gray-200 dark:gray-700"
@@ -48,7 +51,7 @@ const { t } = useI18n()
 
     <div>
       <button
-        class="m-3 text-sm btn"
+        btn m-3 text-sm
         :disabled="!name"
         @click="go"
       >

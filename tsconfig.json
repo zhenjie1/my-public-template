@@ -14,14 +14,14 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "types": [
-      "cypress",
       "vite/client",
+      "vue/ref-macros",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "cypress"]
 }
