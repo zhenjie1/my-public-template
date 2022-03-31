@@ -9,6 +9,5 @@ export const login = (username: string, password: string) => apiFetch<LoginRetur
   data: {
     username, password,
   },
-  file: true,
   dataPath: 'data.data',
 })
