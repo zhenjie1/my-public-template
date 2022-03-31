@@ -1,18 +1,13 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="text-$red p-[10px]">
-    <!-- <counter /> -->
-    1111
-  </div>
+	<div>
+		<a-button>111</a-button>
+	</div>
 </template>
 
-<route lang="yaml">
-meta:
-  layout: emity
-</route>
-
 <style>
-.content{display: flex;}
+.content {
+	display: flex;
+}
 </style>

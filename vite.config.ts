@@ -17,59 +17,55 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 // import Unocss from 'unocss/vite'
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
-    },
-  },
-  plugins: [
-    vueJsx(),
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
-    }),
+	resolve: {
+		alias: {
+			'@/': `${path.resolve(__dirname, 'src')}/`,
+			vue: 'vue/dist/vue.esm-bundler.js',
+		},
+	},
+	plugins: [
+		vueJsx(),
+		Vue({
+			include: [/\.vue$/, /\.md$/],
+			reactivityTransform: true,
+		}),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      extensions: ['vue', 'md'],
-    }),
+		// https://github.com/hannoeru/vite-plugin-pages
+		Pages({
+			extensions: ['vue', 'md'],
+		}),
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
+		// https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+		Layouts(),
 
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
-    VueI18n({
-      runtimeOnly: true,
-      compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
-    }),
-  ],
+		// https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
+		VueI18n({
+			runtimeOnly: true,
+			compositionOnly: true,
+			include: [path.resolve(__dirname, 'locales/**')],
+		}),
+	],
 
-  // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-    onFinished() { generateSitemap() },
-  },
+	// https://github.com/antfu/vite-ssg
+	ssgOptions: {
+		script: 'async',
+		formatting: 'minify',
+		onFinished() {
+			generateSitemap()
+		},
+	},
 
-  optimizeDeps: {
-    include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      '@vueuse/head',
-    ],
-    exclude: [
-      'vue-demi',
-    ],
-  },
+	optimizeDeps: {
+		include: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head'],
+		exclude: ['vue-demi'],
+	},
 
-  // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-    deps: {
-      inline: ['@vue', '@vueuse', 'vue-demi'],
-    },
-  },
+	// https://github.com/vitest-dev/vitest
+	test: {
+		include: ['test/**/*.test.ts'],
+		environment: 'jsdom',
+		deps: {
+			inline: ['@vue', '@vueuse', 'vue-demi'],
+		},
+	},
 })

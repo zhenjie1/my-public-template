@@ -1,5 +1,3 @@
-@import './markdown.css';
-
 html,
 body,
 #app {
@@ -12,17 +10,63 @@ html.dark {
   background: #121212;
 }
 
-#nprogress {
-  pointer-events: none;
+.titleTotal {
+  display: flex;
+  justify-content: space-between;
+  .titleLeft {
+    font-size: 16px;
+    font-family: PingFang SC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #19191a;
+    font-weight: bolder;
+  }
+}
+.baseVisible{
+  .ant-modal-body{
+    height: 70vh;
+    overflow-y: scroll;
+  }
+}
+.flex{
+display: flex;
 }
 
-#nprogress .bar {
-  background: rgb(13,148,136);
-  opacity: 0.75;
-  position: fixed;
-  z-index: 1031;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
+.flex1{
+flex: 1;
+}
+
+.flex0{
+flex: 0;
+}
+
+.flex-end{
+justify-content: flex-end;
+}
+
+.flex-center{
+justify-content: center;
+}
+
+.flex-a-t{
+align-items: flex-start;
+}
+
+.flex-space-between{
+justify-content: space-between ;
+}
+
+.flex-warp{
+flex-wrap: wrap;
+}
+
+.flex-space-around{
+justify-content: space-around;
+}
+
+.flex-align-center{
+align-items: center;
+}
+
+.flex-align-end{
+align-items: flex-end;
 }
